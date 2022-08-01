@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { consult } from '../helpers/api'
 
 
@@ -19,6 +19,14 @@ const VGData = () => {
 
   }
     const urlYT =`https://www.youtube.com/results?search_query=${game.name.replaceAll(' ','+')}+walkthrough`
+    
+    useEffect(() => {
+      
+    
+      return () => {
+        onClick()
+      }
+    },[]);
     
   return (
     <div className='VGData'>

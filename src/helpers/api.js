@@ -1,7 +1,7 @@
 import dateGen from "./dateGenerator"
 
 
-
+//const KEY = process.env.REACT_APP_KEY || ''
 const key = 'key=c2d7851c2c8043b6a0543f082d6323fb'
 const query = `dates=${dateGen()}`
 const ratingQ = `metacritic=60,100`
