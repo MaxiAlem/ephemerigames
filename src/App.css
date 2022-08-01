@@ -1,16 +1,12 @@
+body{
+  font-family: 'Press Start 2P';
+  color: antiquewhite;
+  background-color: #2b2c44
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  
 }
 
 .App-header {
@@ -30,5 +26,88 @@
 
 .game-img{
   width: 90%;
+  margin: 5vh 5vw 5vh 5vw;
   border-radius: 7%;
+}
+.navbar{
+  text-transform: capitalize;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #162033 
+  ;
+}
+.title{
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  padding: 5vh 3vw 1vh 3vw;
+  font-size: 7vw;
+  text-align: center;
+}
+.git-icon{
+  padding-left: 85%;
+}
+.VGdata{
+  background-color: #2b2c44;
+
+  
+}
+.div-data{
+  display: flex;
+  flex-direction: column;
+}
+.data{
+  padding-left: 5vh;
+  margin:3vmin;
+}
+.div-btn{
+  align-items: center;
+  position: absolute;
+  bottom: 3%;
+  width: 30vw;
+  margin-left: 35vw;
+  margin-right: auto;
+}
+
+a{
+  color:rgb(134, 168, 243)
+}
+.yt-link{
+  margin-top: 2em;
+}
+@media (min-width: 700px) and (orientation: landscape) { 
+
+  /* cambios en navbar */
+  .navbar{    
+    flex-direction: row;
+    justify-content: space-between 
+  }
+  .title{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    padding: 5vh 1vw 1vh 1vw;
+    font-size: 4vw;
+    margin-left: 2em;
+  }
+  .git-icon{
+    padding:2%;
+  }
+  /* cambios en main*/
+  .game-img{
+    max-height: 60vh;
+    max-width: 50vw;
+  }
+  .div-data{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    font-size: 1.5em;
+  }
+  .div-btn{
+    bottom: 20vh;
+    margin-left: 70vw;
+  }
+  .first-data{
+    margin-top: 5vh;
+  }
 }

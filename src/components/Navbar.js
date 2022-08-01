@@ -2,12 +2,13 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <nav>
-      <div>
-
+    <nav className='navbar'>
+      <div className='title'>
+      ephemerigames
       </div>
-      <div>
-        github
+      <div className='git-icon'>
+       <a href='https://github.com/MaxiAlem/ephemerigames' target='_blank' rel="noreferrer">
+       <i className="nes-icon github is-medium "></i></a> 
       </div>
       </nav>
   )

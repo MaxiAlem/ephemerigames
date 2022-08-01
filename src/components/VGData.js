@@ -6,32 +6,44 @@ import { consult } from '../helpers/api'
   let data = {}
 const VGData = () => {
   const [game, setGame] =useState({name:'',background_image:'', released:'',dominant_color:''})
+  const [loading, setLoading]= useState(true)
   const onClick = async()=>{
-  
-  try {
-    data = await consult()
+    try {
+    const res = await consult()
+    data = await res
     setGame(data)
-    
-    
-  } catch (error) {
+    setLoading(false) 
+    } catch (error) {
     console.log(error)
+    }
+
   }
-  
-  console.log(game)
-  }
-  const style= {bgcolor:game.dominant_color}
+    const urlYT =`https://www.youtube.com/results?search_query=${game.name.replaceAll(' ','+')}+walkthrough`
+    
   return (
-    <div style={style}>
-      <div>nombre : {game.name}</div>
-      <div>fecha: {game.released}</div>
-      <img className='game-img' src={game.background_image} alt={game.name}/>
-      <div>
-        <button id="start"
-      className=""
-      onClick={onClick}><div>try again</div></button>
-      </div>
- 
+    <div className='VGData'>
+      {loading ? <div>Cargando ...</div>
+                
+                :<div className='div-data'>
+                  <div className='data'>
+                    <div className='first-data'>A Day Like Today but in  {game.released.slice(0,4)}</div>
+                    <div>{game.name} was released</div>
+                    <div className='yt-link'><a href={urlYT} target="_blank" rel="noreferrer">
+                    Look on Youtube</a></div>
+                  </div>                         
+                  <img className='game-img' src={game.background_image} alt={game.name}/>
+                  
+
+            </div>}
       
+      
+      <div className='div-btn'>
+        <button
+          className="nes-btn is-error"
+          onClick={onClick}>
+        <div>try again</div>
+        </button>
+      </div>  
     </div>
   )
 }
