@@ -12,14 +12,21 @@ const VGData = () => {
     const res = await consult()
     data = await res
     setGame(data)
+    
     setLoading(false) 
     } catch (error) {
     console.log(error)
     }
-
+    
+    
   }
     const urlYT =`https://www.youtube.com/results?search_query=${game.name.replaceAll(' ','+')}+walkthrough`
-    
+    const img =()=>{
+      if(game.background_image === null){
+        return 'no_img.webp'
+      }else {
+        return game.background_image}
+    }
     useEffect(() => {
       
     
@@ -30,7 +37,7 @@ const VGData = () => {
     
   return (
     <div className='VGData'>
-      {loading ? <div className='div-load'>Cargando ...</div>
+      {loading ? <div className='div-load'>loading ...</div>
                 
                 :<div className='div-data'>
                   <div className='data'>
@@ -39,7 +46,7 @@ const VGData = () => {
                     <div className='yt-link'><a href={urlYT} target="_blank" rel="noreferrer">
                     Look on Youtube</a></div>
                   </div>                         
-                  <img className='game-img' src={game.background_image} alt={game.name}/>
+                  <img className='game-img' src={img()} alt={game.name}/>
                   
 
             </div>}
