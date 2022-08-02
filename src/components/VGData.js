@@ -23,14 +23,14 @@ const VGData = () => {
     useEffect(() => {
       
     
-      return () => {
+     
         onClick()
-      }
+      
     },[]);
     
   return (
     <div className='VGData'>
-      {loading ? <div>Cargando ...</div>
+      {loading ? <div className='div-load'>Cargando ...</div>
                 
                 :<div className='div-data'>
                   <div className='data'>
