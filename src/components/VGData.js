@@ -65,7 +65,7 @@ const VGData = () => {
   
       return metaTags()
      
-    }, [game])
+    }, [game])// eslint-disable-line react-hooks/exhaustive-deps
   return (
     <>
     <div className='VGData'>
