@@ -65,8 +65,7 @@ const VGData = () => {
     useLayoutEffect(() => {
   
        //metaTags()
-      setFbUrl(`${fbUrl}
-      &picture=${img()}`)
+      setFbUrl(`${fbUrl}&picture=${img()}`)
       // &title=${game.name}
       // &description=ADayLikeTodaybutin${game.released.slice(0,4)},${game.name}wasreleased`)
     }, [game])// eslint-disable-line react-hooks/exhaustive-deps
