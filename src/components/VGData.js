@@ -96,7 +96,7 @@ const VGData = () => {
           <button><i className="nes-icon facebook is-medium"></i></button>
           <div class="fb-share-button"  
           data-layout="button_count" ><a 
-          target="_blank" 
+          target="_blank" rel="noreferrer"
           href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaleidoscopic-cat-ed3c09.netlify.app%2F&amp;src=sdkpreparse" 
           class="fb-xfbml-parse-ignore">Compartir</a></div>
         </div>
