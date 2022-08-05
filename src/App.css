@@ -61,6 +61,8 @@ body{
   margin:3vmin;
 }
 .div-btn{
+  display: flex;
+  flex-direction: row;
   align-items: center;
   position: absolute;
   bottom: 3%;
@@ -68,7 +70,9 @@ body{
   margin-left: 35vw;
   margin-right: auto;
 }
-
+.div-share{
+  margin-left: 1em;
+}
 a{
   color:rgb(134, 168, 243)
 }

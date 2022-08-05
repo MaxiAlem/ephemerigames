@@ -85,11 +85,22 @@ const VGData = () => {
       
       
       <div className='div-btn'>
-        <button
+        <div>
+          <button
           className="nes-btn is-error"
           onClick={takeOne}>
-        <div>try again</div>
-        </button>
+          <div>try again</div>
+          </button>
+        </div>
+        <div className='div-share'>
+          <button><i className="nes-icon facebook is-medium"></i></button>
+          <div class="fb-share-button"  
+          data-layout="button_count" ><a 
+          target="_blank" 
+          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaleidoscopic-cat-ed3c09.netlify.app%2F&amp;src=sdkpreparse" 
+          class="fb-xfbml-parse-ignore">Compartir</a></div>
+        </div>
+        
       </div>  
     </div>
     </>
