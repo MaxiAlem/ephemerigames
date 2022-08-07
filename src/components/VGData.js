@@ -29,14 +29,14 @@ const VGData = () => {
         return game.background_image}
       
     }
-  //   const  metaTags=()=>{
-  //     const metaogs = document.getElementsByTagName('meta')
-  //     console.log(metaogs[3])
+    const  metaTags=()=>{
+      const metaogs = document.getElementsByTagName('meta')
+      
 
-  //     metaogs[3].setAttribute('content', game.name) //title
-  //     metaogs[5].setAttribute('content', img())//image
-  //     metaogs[6].setAttribute('content', img())//image:secure_url
-  //     metaogs[4].setAttribute('content', `A Day Like Today but in  ${game.released.slice(0,4)}, ${game.name} was released`)
+      metaogs[3].setAttribute('content', game.name) //title
+      metaogs[5].setAttribute('content', img())//image
+      metaogs[6].setAttribute('content', img())//image:secure_url
+      metaogs[4].setAttribute('content', `A Day Like Today but in  ${game.released.slice(0,4)}, ${game.name} was released`)
   //     //  const ogTitle = document.createElement('meta');
   // //  ogTitle.setAttribute('property', 'og:type');
   // //  ogTitle.setAttribute('content', game.name);
@@ -53,7 +53,7 @@ const VGData = () => {
   // //  document.head.prepend(ogTitle)
   //  console.log(game.name)
    
-  //  }
+    }
     
    
 
@@ -64,7 +64,7 @@ const VGData = () => {
     },[])// eslint-disable-line react-hooks/exhaustive-deps
     useLayoutEffect(() => {
   
-       //metaTags()
+       metaTags()
       
       // &title=${game.name}
       // &description=ADayLikeTodaybutin${game.released.slice(0,4)},${game.name}wasreleased`)
