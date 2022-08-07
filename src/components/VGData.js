@@ -8,7 +8,7 @@ const VGData = () => {
   
   const [game, setGame] =useState({name:'',background_image:'', released:'',dominant_color:''})
   const [loading, setLoading]= useState(true)
-  const [fbUrl,setFbUrl] = useState("https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaleidoscopic-cat-ed3c09.netlify.app%2F&amp;src=sdkpreparse")
+  let fbUrl=`https://www.facebook.com/sharer/sharer.php?u=https://kaleidoscopic-cat-ed3c09.netlify.app/&quote=${game.name}`
   const takeOne = async()=>{
     try {
     const res = await consult()
@@ -65,7 +65,7 @@ const VGData = () => {
     useLayoutEffect(() => {
   
        //metaTags()
-      setFbUrl(`${fbUrl}&picture=${img()}`)
+      
       // &title=${game.name}
       // &description=ADayLikeTodaybutin${game.released.slice(0,4)},${game.name}wasreleased`)
     }, [game])// eslint-disable-line react-hooks/exhaustive-deps
@@ -96,12 +96,11 @@ const VGData = () => {
           </button>
         </div>
         <div className='div-share'>
-          <button><i className="nes-icon facebook is-medium"></i></button>
-          <div className="fb-share-button"  
-          data-layout="button_count" ><a 
+          <button><a 
           target="_blank" rel="noreferrer"
           href= {fbUrl}
-          className="fb-xfbml-parse-ignore">Compartir</a></div>
+          className="fb-xfbml-parse-ignore"><i className="nes-icon facebook is-medium"></i></a></button>
+          
         </div>
         
       </div>  
