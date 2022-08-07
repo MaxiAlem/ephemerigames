@@ -1,12 +1,25 @@
-body{
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
   font-family: 'Press Start 2P';
   color: antiquewhite;
-  background-color: #2b2c44
+  background-color: #2b2c44;
 }
 
 .App {
   text-align: center;
-  
 }
 
 .App-header {
@@ -24,43 +37,47 @@ body{
   color: #61dafb;
 }
 
-.game-img{
+.game-img {
   width: 90%;
   margin: 5vh 5vw 5vh 5vw;
   border-radius: 7%;
 }
-.navbar{
+
+.navbar {
   text-transform: capitalize;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #162033 
-  ;
+  background-color: #162033;
 }
-.title{
+
+.title {
   padding-top: 5vh;
   padding-bottom: 5vh;
   padding: 5vh 3vw 1vh 3vw;
   font-size: 7vw;
   text-align: center;
 }
-.git-icon{
+
+.git-icon {
   padding-left: 85%;
 }
-.VGdata{
-  background-color: #2b2c44;
 
-  
+.VGdata {
+  background-color: #2b2c44;
 }
-.div-data{
+
+.div-data {
   display: flex;
   flex-direction: column;
 }
-.data{
+
+.data {
   padding-left: 5vh;
-  margin:3vmin;
+  margin: 3vmin;
 }
-.div-btn{
+
+.div-btn {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -70,54 +87,63 @@ body{
   margin-left: 35vw;
   margin-right: auto;
 }
-.div-share{
+
+.div-share {
   margin-left: 1em;
 }
-a{
-  color:rgb(134, 168, 243)
+
+a {
+  color: rgb(134, 168, 243);
 }
-.yt-link{
+
+.yt-link {
   margin-top: 2em;
 }
 
-.div-load{
+.div-load {
   margin-top: 15vh;
-  margin-left: 20vw ;
+  margin-left: 20vw;
   font-size: 2em;
 }
-@media (min-width: 700px) and (orientation: landscape) { 
 
+@media (min-width: 700px) and (orientation: landscape) {
   /* cambios en navbar */
-  .navbar{    
+  .navbar {
     flex-direction: row;
-    justify-content: space-between 
+    justify-content: space-between;
   }
-  .title{
+
+  .title {
     padding-top: 5vh;
     padding-bottom: 5vh;
     padding: 5vh 1vw 1vh 1vw;
     font-size: 4vw;
     margin-left: 2em;
   }
-  .git-icon{
-    padding:2%;
+
+  .git-icon {
+    padding: 2%;
   }
+
   /* cambios en main*/
-  .game-img{
+  .game-img {
     max-height: 60vh;
     max-width: 50vw;
   }
-  .div-data{
+
+  .div-data {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     font-size: 1.5em;
   }
-  .div-btn{
+
+  .div-btn {
     bottom: 20vh;
     margin-left: 70vw;
   }
-  .first-data{
+
+  .first-data {
     margin-top: 5vh;
   }
 }
