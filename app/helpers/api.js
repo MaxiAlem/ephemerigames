@@ -8,7 +8,7 @@ async function consult() {
   searchParams.append('key', process.env.API_KEY);
   searchParams.append('dates', dateGen());
   searchParams.append('platforms', '12,119,167,107,49,79,43,24,83,27');
-  searchParams.append('-rating', '3');
+  //searchParams.append('-rating', '3');
   searchParams.append('page_size', '40');
 
   const url = `${baseUrl}/games?${searchParams}`;
