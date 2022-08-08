@@ -4,7 +4,7 @@ const VGData = () => {
   const game = useLoaderData();
   console.log(game);
 
-  let fbUrl = `https://www.facebook.com/sharer/sharer.php?u=https://kaleidoscopic-cat-ed3c09.netlify.app/&quote=${game.name}`;
+  let fbUrl = `https://www.facebook.com/sharer/sharer.php?u=https://ephemerigames.vercel.app/`;
 
   const urlYT = `https://www.youtube.com/results?search_query=${game.name.replaceAll(
     ' ',
