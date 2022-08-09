@@ -41,7 +41,7 @@ const VGData = () => {
           <div>
             <button
               className="nes-btn is-error"
-              onClick={() => {
+              onClick={() => {window.location.reload()
                 /*take one*/
               }}
             >

@@ -16,12 +16,20 @@ async function consult() {
   try {
     const res = await fetch(url);
     const data = await res.json();
+    //
+    if (res.status !== 200) {
+      const errorMsg = `Can't get data from api, status: ${
+        res.status
+      }, error: ${JSON.stringify(data)}`;
 
+      throw new Error(errorMsg);
+    }//
     let rand = Math.floor(Math.random() * data.results.length);
 
     return data.results[rand];
-  } catch (error) {
+  } catch (error) { 
     console.log(error);
+    throw error;
   }
 }
 
