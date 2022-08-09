@@ -48,7 +48,8 @@ export function meta({ data: game }) {
 
   return {
     title: game.name,
-    img: game.background_image ?? 'no_img.jpg',
+    'og:image': game.background_image ?? 'no_img.jpg',
+    'og:image:secure_url': game.background_image ?? 'no_img.jpg',
     'og:description': `A Day Like Today but in ${game.released.slice(0, 4)}, ${
       game.name
     } was released`,
