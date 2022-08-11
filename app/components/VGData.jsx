@@ -1,8 +1,13 @@
-import { useLoaderData } from '@remix-run/react';
+import { useLoaderData, Link } from '@remix-run/react';
+import { useState } from 'react';
 
 const VGData = () => {
+  //test routing dinamico
+
+  const [iGame,setIGame]=useState('0')
   const game = useLoaderData();
-  console.log(game);
+ 
+  //console.log(game);
 
   let fbUrl = `https://www.facebook.com/sharer/sharer.php?u=https://ephemerigames.vercel.app/`;
 
@@ -18,9 +23,16 @@ const VGData = () => {
       return game.background_image;
     }
   };
+  const rndPage =()=>{
+    //conseguir el value de data.result.leght
+    let r =Math.floor(Math.random() * 40)
+    setIGame(r)
+    return console.log(r);
+  }
 
   return (
     <>
+    <div>estamos en la page {iGame}</div>
       <div className="VGData">
         <div className="div-data">
           <div className="data">
@@ -39,14 +51,18 @@ const VGData = () => {
 
         <div className="div-btn">
           <div>
+            {/* prueba Routuing */}
+
+            <Link to={`/${iGame}`}>
+             
             <button
+              //disabled={iGame===''}
               className="nes-btn is-error"
-              onClick={() => {window.location.reload(true)
-                /*take one*/
-              }}
+              onClick={ ()=>{rndPage()}}
             >
               <div>try again</div>
             </button>
+           </Link >
           </div>
           <div className="div-share">
             <button>

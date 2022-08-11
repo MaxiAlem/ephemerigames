@@ -44,7 +44,7 @@ export function links() {
 }
 
 export function meta({ data: game }) {
-  console.log(`head data: `, game);
+ // console.log(`head data: `, game);
 
   return {
     title: game.name,
