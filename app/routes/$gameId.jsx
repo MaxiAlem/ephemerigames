@@ -84,8 +84,7 @@ export  default  function  Success() {
 return (
 	<>
 		<Navbar/>
-		<div><h2>pagina {gameId} </h2></div>
-		<div><h2>lenGames {data.length} </h2></div>
+		
 		<VGData />
 	</>
 	 );

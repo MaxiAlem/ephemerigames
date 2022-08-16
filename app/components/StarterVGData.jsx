@@ -24,9 +24,10 @@ const VGData = () => {
     setGameId(r)
     //return console.log(r);
   }
-    const game = data[indexG]
+    const game = data[1]
+    //buscamos en el idex 1 porque el primer trigger del boton try again devuelve 0 siempre
     
-  let fbUrl = `https://www.facebook.com/sharer/sharer.php?u=https://ephemerigames.vercel.app/${indexG}`;
+  let fbUrl = `https://www.facebook.com/sharer/sharer.php?u=https://ephemerigames.vercel.app/${1}`;
 
   const urlYT = `https://www.youtube.com/results?search_query=${game.name.replaceAll(
     ' ',
@@ -51,7 +52,6 @@ const VGData = () => {
           </div>
           <img className="game-img" src={img()} alt={game.name} />
         </div>   
-        
         <div className="div-btn">
           <div>
             {/* prueba Routuing */}

@@ -1,8 +1,8 @@
 import { consult } from '~/helpers/api';
 
 import Navbar from '~/components/Navbar';
-import VGData from '~/components/VGData';
 
+import StarterVGData from '~/components/StarterVGData'
 import styles from '~/styles/main.css';
 import { json } from '@remix-run/node';
 
@@ -43,19 +43,24 @@ export function links() {
   ];
 }
 
-export function meta({ data: data }) {
- // console.log(`head data: `, game);
- const {data:game}=data
- console.log(`head data: `, game.name);
-  // return {
-  //   title: game.name,
-  //   'og:image': game.background_image ?? 'no_img.jpg',
-  //   'og:image:secure_url': game.background_image ?? 'no_img.jpg',
-  //   'og:description': `A Day Like Today but in ${game.released.slice(0, 4)}, ${
-  //     game.name
-  //   } was released`,
-  // };
-}
+export function meta({ data: data}) {
+	
+	
+	const {data:game,gameId:gameId}=data
+
+    
+    
+  	//como modificamos el loader, ahora nos devuelve un object con los dos elementos que contiene
+  	//haciendo magia con destructuring, nos olvidamos del problema
+    return {
+      title: game[1].name,
+      'og:image': game[1].background_image ?? 'no_img.jpg',
+      'og:image:secure_url': game[1].background_image ?? 'no_img.jpg',
+      'og:description': `A Day Like Today but in ${game[1].released.slice(0, 4)}, ${
+        game[1].name
+      } was released`,
+    };
+  }
 
 export async function   loader({request,params}){
 
@@ -69,7 +74,7 @@ export default function Index() {
   return (
     <>
       <Navbar />
-      <VGData />
+      <StarterVGData/>
     </>
   );
 }
