@@ -43,26 +43,23 @@ export function links() {
   ];
 }
 
-export function meta({ data: data }) {
+export function meta({ data: game }) {
  // console.log(`head data: `, game);
- const {data:game}=data
- console.log(`head data: `, game.name);
-  // return {
-  //   title: game.name,
-  //   'og:image': game.background_image ?? 'no_img.jpg',
-  //   'og:image:secure_url': game.background_image ?? 'no_img.jpg',
-  //   'og:description': `A Day Like Today but in ${game.released.slice(0, 4)}, ${
-  //     game.name
-  //   } was released`,
-  // };
+
+  return {
+    title: game.name,
+    'og:image': game.background_image ?? 'no_img.jpg',
+    'og:image:secure_url': game.background_image ?? 'no_img.jpg',
+    'og:description': `A Day Like Today but in ${game.released.slice(0, 4)}, ${
+      game.name
+    } was released`,
+  };
 }
 
-export async function   loader({request,params}){
+export async function loader() {
+  const data = await consult();
 
-	
-	const data = await consult();
-	const  gameId  =  params.gameId
-	return  json({data,gameId})
+  return json(data);
 }
 
 export default function Index() {

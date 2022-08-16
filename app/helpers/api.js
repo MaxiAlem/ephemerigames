@@ -1,7 +1,7 @@
 import dateGen from './dateGenerator';
 
 const baseUrl = 'https://api.rawg.io/api';
-
+ let lenGames = 0
 async function consult() {
   const searchParams = new URLSearchParams();
 
@@ -12,10 +12,11 @@ async function consult() {
   searchParams.append('page_size', '40');
 
   const url = `${baseUrl}/games?${searchParams}`;
-
+  
   try {
     const res = await fetch(url);
     const data = await res.json();
+    
     //
     if (res.status !== 200) {
       const errorMsg = `Can't get data from api, status: ${
@@ -24,13 +25,15 @@ async function consult() {
 
       throw new Error(errorMsg);
     }//
-    let rand = Math.floor(Math.random() * data.results.length);
-
-    return data.results[rand];
+    //let rand = Math.floor(Math.random() * data.results.length);
+    //lenGames =  await data.results.length
+    return data.results;
   } catch (error) { 
     console.log(error);
     throw error;
   }
+
+  
 }
 
-export { consult };
+export { consult,lenGames };

@@ -4,18 +4,13 @@ import { useState } from 'react';
 const VGData = () => {
   //test routing dinamico
 
-  const [iGame,setIGame]=useState('0')
-  const game = useLoaderData();
+  const [gameId,setGameId]=useState(Number)
+  const {data:data, gameId:indexG} = useLoaderData();
+  
+ //al tener dos loaders desde el $gameId, necesitamos hacer un destruc en el useLoad... 
+  //console.log(game.length );
+
  
-  //console.log(game);
-
-  let fbUrl = `https://www.facebook.com/sharer/sharer.php?u=https://ephemerigames.vercel.app/`;
-
-  const urlYT = `https://www.youtube.com/results?search_query=${game.name.replaceAll(
-    ' ',
-    '+',
-  )}+walkthrough`;
-
   const img = () => {
     if (game.background_image === null) {
       return 'no_img.jpg';
@@ -25,16 +20,24 @@ const VGData = () => {
   };
   const rndPage =()=>{
     //conseguir el value de data.result.leght
-    let r =Math.floor(Math.random() * 40)
-    setIGame(r)
-    return console.log(r);
+    let r =Math.floor(Math.random() * data.length)
+    setGameId(r)
+    //return console.log(r);
   }
+    const game = data[indexG]
+    
+  let fbUrl = `https://www.facebook.com/sharer/sharer.php?u=https://ephemerigames.vercel.app/`;
+
+  const urlYT = `https://www.youtube.com/results?search_query=${game.name.replaceAll(
+    ' ',
+    '+',
+  )}+walkthrough`;
 
   return (
     <>
-    <div>estamos en la page {iGame}</div>
+    
       <div className="VGData">
-        <div className="div-data">
+         <div className="div-data">
           <div className="data">
             <div className="first-data">
               A Day Like Today but in {game.released.slice(0, 4)}
@@ -47,13 +50,13 @@ const VGData = () => {
             </div>
           </div>
           <img className="game-img" src={img()} alt={game.name} />
-        </div>
-
+        </div>   
+        <div>desde vgdata len{data.length}</div>
         <div className="div-btn">
           <div>
             {/* prueba Routuing */}
 
-            <Link to={`/${iGame}`}>
+            <Link to={`/${gameId}`}>
              
             <button
               //disabled={iGame===''}
