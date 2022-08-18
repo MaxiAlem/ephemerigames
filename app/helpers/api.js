@@ -7,7 +7,7 @@ async function consult() {
 
   searchParams.append('key', process.env.API_KEY);
   searchParams.append('dates', dateGen());
-  searchParams.append('platforms', '12,119,167,107,49,79,43,24,83,27');
+  searchParams.append('platforms', '12,119,167,107,49,79,43,24,83,27,106,15,105,119,117,4');//4PC-105 gcube
   //searchParams.append('-rating', '3');
   searchParams.append('page_size', '40');
 

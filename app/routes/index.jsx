@@ -48,12 +48,13 @@ export function meta({ data: data}) {
 	
 	const {data:game,gameId:gameId}=data
 
-    
+  console.log(`total results `, game);
     
   	//como modificamos el loader, ahora nos devuelve un object con los dos elementos que contiene
   	//haciendo magia con destructuring, nos olvidamos del problema
     return {
-      title: game[1].name,
+       'og:type' : 'website',
+      'og:title': game[1].name,
       'og:image': game[1].background_image ?? 'no_img.jpg',
       'og:image:secure_url': game[1].background_image ?? 'no_img.jpg',
       'og:description': `A Day Like Today but in ${game[1].released.slice(0, 4)}, ${

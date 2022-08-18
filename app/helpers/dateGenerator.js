@@ -5,7 +5,7 @@ const d = String(date.getDate()).padStart(2, '0'); //si le agregamo una fecha cu
 
 const dateGen = () => {
   const start = 1970;
-  const end = date.getFullYear();
+  const end = date.getFullYear()-10;
   let dates = [];
   for (let i = start; i <= end; i++) {
     dates = [`${i}-${m}-${d} ${i}-${m}-${d}`, ...dates];
